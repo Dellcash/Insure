@@ -18,13 +18,30 @@
 		<title>Insure landing page</title>
 	</head>
 	<body>
-		<header class="flex items-center justify-between px-5 pt-10 pb-5">
-			<img src="./images/logo.svg" alt="" />
-			<button v-cloak @click="open = !open" class="focus:outline-none">
-				<img v-if="!open" src="./images/icon-hamburger.svg" alt="" />
-				<img v-else src="./images/icon-close.svg" alt="" />
-			</button>
-			<!-- <nav></nav> -->
+		<header>
+			<div class="flex items-center justify-between px-5 pt-10 pb-5">
+				<img src="./images/logo.svg" alt="" />
+				<button v-cloak @click="open = !open" class="focus:outline-none">
+					<img v-if="!open" src="./images/icon-hamburger.svg" alt="" />
+					<img v-else src="./images/icon-close.svg" alt="" />
+				</button>
+			</div>
+			<nav
+				v-cloak
+				class="absolute w-full h-full pt-10 text-center text-gray-200 shadow-2xl "
+				v-if="open"
+			>
+				<div class="pb-16">
+					<h1
+						v-for="tab in tabs"
+						:key="tab"
+						class="pb-8 text-lg font-semibold tracking-wider uppercase tabs"
+					>
+						{{ tab }}
+					</h1>
+				</div>
+				<img src="./images/bg-pattern-mobile-nav.svg" class="" />
+			</nav>
 		</header>
 		<main>
 			<section>
@@ -52,20 +69,16 @@
 					<img
 						src="./images/bg-pattern-intro-left-mobile.svg"
 						class="absolute top-0 left-0"
-            style="z-index: -1"
+						style="z-index: -1"
 					/>
-          <img src="./images/bg-pattern-intro-right-mobile.svg" class="absolute right-0 top-96">
+					<img
+						src="./images/bg-pattern-intro-right-mobile.svg"
+						class="absolute right-0 top-96"
+					/>
 				</div>
 			</section>
 		</main>
-		<!-- How we work
-  Blog
-  Account
-  View plans
-
-  
-
-  
+		<!-- 
 
   We’re different
 
@@ -119,6 +132,7 @@
 			import { createApp } from "https://unpkg.com/petite-vue?module";
 			createApp({
 				open: false,
+				tabs: ["How we work", "Blog", "Account", "View plans"],
 			}).mount();
 		</script>
 	</body>
