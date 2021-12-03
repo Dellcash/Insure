@@ -21,3 +21,6 @@ nav {
 	background-color: hsl(270, 9%, 17%);
 	z-index: 2;
 }
+.socials:last-child {
+	padding-right: 0;
+}
