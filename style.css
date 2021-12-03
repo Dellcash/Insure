@@ -17,10 +17,18 @@ body {
 	margin: 0 20px;
 	margin-bottom: 10px;
 }
-nav {
+.nav {
 	background-color: hsl(270, 9%, 17%);
 	z-index: 2;
 }
 .socials:last-child {
 	padding-right: 0;
+}
+@media (min-width: 768px) {
+	.tabs:last-child {
+		padding: 5px 25px;
+		border: 2px solid #000;
+		margin:0;
+		color:#2a2a2a
+	}
 }

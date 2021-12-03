@@ -63,5 +63,6 @@ PetiteVue.createApp({
       firstLink: "Press",
       secondLink: "Licenses",
     },
-  }
+  },
+  // 
 }).mount( "#app" );
